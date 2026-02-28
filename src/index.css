@@ -1,13 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap");
+
+:root {
+  --wg-navy: #052f63;
+  --wg-navy-2: #0a4d8a;
+  --wg-cyan: #1db9ea;
+  --wg-cyan-2: #53d5ff;
+  --wg-silver: #e8edf3;
+  --wg-bg: #f4f8fc;
+  --wg-text: #123255;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: var(--wg-text);
+  background:
+    radial-gradient(circle at 12% -5%, rgba(29, 185, 234, 0.24) 0%, transparent 34%),
+    radial-gradient(circle at 86% 0%, rgba(5, 47, 99, 0.2) 0%, transparent 38%),
+    linear-gradient(180deg, #fafdff 0%, var(--wg-bg) 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
+  font-family: "Sora", "Manrope", sans-serif;
+  letter-spacing: 0.2px;
+}
+
+.wg-shell {
+  min-height: 100vh;
+}
+
+.wg-main {
+  background: transparent !important;
+}
+
+.card {
+  border: 1px solid rgba(5, 47, 99, 0.08) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 30px rgba(5, 47, 99, 0.08) !important;
+}
+
+.btn {
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--wg-navy) 0%, var(--wg-cyan) 100%) !important;
+  border: 0 !important;
+}
+
+.btn-primary:hover {
+  filter: brightness(0.96);
+}
+
+.btn-outline-primary {
+  color: var(--wg-navy) !important;
+  border-color: rgba(5, 47, 99, 0.35) !important;
+}
+
+.btn-outline-primary:hover {
+  color: #fff !important;
+  background-color: var(--wg-navy) !important;
+}
+
+.form-control,
+.form-select {
+  border-radius: 10px !important;
+  border: 1px solid rgba(5, 47, 99, 0.18) !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--wg-cyan) !important;
+  box-shadow: 0 0 0 0.2rem rgba(29, 185, 234, 0.18) !important;
+}
+
+.alert {
+  border-radius: 12px !important;
+}
+
+.wg-auth-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(29, 185, 234, 0.2) 0%, transparent 34%),
+    radial-gradient(circle at 10% 90%, rgba(5, 47, 99, 0.16) 0%, transparent 40%),
+    linear-gradient(180deg, #f6fbff 0%, #eef5fb 100%);
+}
+
+.wg-auth-card {
+  width: 440px;
+  max-width: 100%;
+  backdrop-filter: blur(2px);
+  animation: wg-rise-in 0.35s ease-out;
+}
+
+.wg-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.wg-logo-sm {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.wg-logo-lg {
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+}
+
+.wg-brand-text {
+  background: linear-gradient(135deg, var(--wg-navy) 0%, var(--wg-cyan) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.wg-sidebar {
+  width: 260px;
+  background:
+    linear-gradient(180deg, #06284e 0%, #0a3d74 54%, #0f6ea3 100%),
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.04) 8px,
+      rgba(255, 255, 255, 0.02) 8px,
+      rgba(255, 255, 255, 0.02) 16px
+    );
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.wg-nav-link {
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  transition: all 0.16s ease-in-out !important;
+}
+
+.wg-nav-link.btn-light {
+  color: var(--wg-navy) !important;
+}
+
+.wg-nav-link:hover {
+  transform: translateX(2px);
+}
+
+.wg-navbar {
+  background: rgba(255, 255, 255, 0.86) !important;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(5, 47, 99, 0.08);
+}
+
+@keyframes wg-rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 991px) {
+  .wg-shell {
+    flex-direction: column;
+  }
+
+  .wg-sidebar {
+    width: 100%;
+  }
 }
